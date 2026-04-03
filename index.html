@@ -1163,6 +1163,7 @@
   <div class="lang-toggle">
     <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
     <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">中</button>
+    <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
   </div>
 </header>
 
@@ -1294,6 +1295,28 @@ const T = {
     nearMeSearching: 'Getting your location...',
     nearMePermDenied: 'Location access denied. Enable it in browser settings to use Near Me.',
     nearMeError: 'Could not get your location. Please try again.',
+    weatherBannerText: 'Rainy? Try indoor activities!',
+    weatherBannerBtn: 'Show indoor venues',
+    searchRegionFirst: 'Search a region first',
+    searchRegionFirstDesc: (catName) => `Type a city or Bundesland in the search bar above, then filter by "${catName}"`,
+    browseCategory: (catName) => `Search a region to browse ${catName}`,
+    browseCategoryDesc: 'Type a city or Bundesland above - results will be filtered to this category.',
+    noInRegion: (catName, region) => `No ${catName} in ${region}`,
+    tryOtherCategory: 'Try a different category or search another region.',
+    venuesSection: 'Venues',
+    regionsSection: 'Regions',
+    nearMeLocationType: 'Location',
+    featuredRegion: 'Featured Germany Venues',
+    allCountry: 'All Germany',
+    allCountryCat: (catName) => `${catName} - All Germany`,
+    yourLocation: 'Your location',
+    sortedByDistance: 'Sorted by distance',
+    showingIndoor: 'Showing indoor venues',
+    venueDetails: 'Venue Details',
+    visitWebsite: 'Visit Website',
+    navigateTo: 'Navigate',
+    favorited: 'Favorited',
+    addFavorite: 'Add to Favorites',
   },
   zh: {
     filterLabel: '种类：',
@@ -1318,57 +1341,125 @@ const T = {
     nearMeSearching: '正在获取位置...',
     nearMePermDenied: '位置访问被拒绝，请在浏览器设置中允许以使用"我附近"功能。',
     nearMeError: '无法获取位置，请重试。',
+    weatherBannerText: '下雨天？试试室内活动！',
+    weatherBannerBtn: '查看室内场地',
+    searchRegionFirst: '请先搜索地区',
+    searchRegionFirstDesc: (catName) => `在上方搜索框输入城市或联邦州，再按「${catName}」筛选`,
+    browseCategory: (catName) => `搜索地区，查看全部${catName}`,
+    browseCategoryDesc: '在上方搜索框输入城市或联邦州，立即筛选该种类',
+    noInRegion: (catName, region) => `${region} 暂无${catName}`,
+    tryOtherCategory: '试试其他分类，或搜索其他地区。',
+    venuesSection: '场地',
+    regionsSection: '地区',
+    nearMeLocationType: '定位',
+    featuredRegion: '德国精选场地',
+    allCountry: '德国全境',
+    allCountryCat: (catName) => `${catName} - 德国全境`,
+    yourLocation: '你的位置',
+    sortedByDistance: '已按距离排序',
+    showingIndoor: '已筛选室内活动场地',
+    venueDetails: '场地详情',
+    visitWebsite: '访问官方网站',
+    navigateTo: '导航前往',
+    favorited: '已收藏',
+    addFavorite: '收藏',
+  },
+  de: {
+    filterLabel: 'Kategorie:',
+    allLabel: 'Alle',
+    searching: 'Suche läuft... (10-40s)',
+    loadingVenues: 'Orte werden geladen...',
+    loadingHint: 'OpenStreetMap wird abgefragt, normalerweise 10-40s',
+    found: (n, region) => `<strong>${n}</strong> Orte in <strong>${region}</strong>`,
+    notFound: 'Keine Orte gefunden. Versuchen Sie eine andere Region.',
+    emptyTitle: 'Deutschland entdecken',
+    emptyDesc: 'Suchen Sie oben nach einem Bundesland oder einer Stadt, um Museen, Spielplätze, Zoos, Freizeitparks und mehr für Kinder zu finden.',
+    noWebsite: 'Keine Website',
+    website: '🔗 Offizielle Website',
+    navigate: '🧭 Navigation',
+    flyTo: '📍 Auf Karte zeigen',
+    loadMore: 'Mehr laden',
+    regionNotFound: 'Region nicht gefunden. Versuchen Sie einen deutschen Stadt- oder Bundeslandnamen.',
+    searchPlaceholder: 'Ort oder Region suchen... z.B. Europa-Park, Berlin',
+    resultLabel: 'Suchen Sie eine Region, um Kinderorte zu entdecken',
+    favoritesLabel: 'Favoriten',
+    nearMe: 'In der Nähe',
+    nearMeSearching: 'Standort wird ermittelt...',
+    nearMePermDenied: 'Standortzugriff verweigert. Aktivieren Sie ihn in den Browsereinstellungen.',
+    nearMeError: 'Standort konnte nicht ermittelt werden. Bitte erneut versuchen.',
+    weatherBannerText: 'Regnet es? Versuchen Sie Innenaktivitäten!',
+    weatherBannerBtn: 'Innenorte anzeigen',
+    searchRegionFirst: 'Zuerst eine Region suchen',
+    searchRegionFirstDesc: (catName) => `Geben Sie oben eine Stadt oder ein Bundesland ein, dann filtern Sie nach „${catName}"`,
+    browseCategory: (catName) => `Suchen Sie eine Region, um ${catName} zu finden`,
+    browseCategoryDesc: 'Geben Sie oben eine Stadt oder ein Bundesland ein - Ergebnisse werden nach dieser Kategorie gefiltert.',
+    noInRegion: (catName, region) => `Keine ${catName} in ${region}`,
+    tryOtherCategory: 'Versuchen Sie eine andere Kategorie oder suchen Sie eine andere Region.',
+    venuesSection: 'Orte',
+    regionsSection: 'Regionen',
+    nearMeLocationType: 'Standort',
+    featuredRegion: 'Ausgewählte Orte in Deutschland',
+    allCountry: 'Ganz Deutschland',
+    allCountryCat: (catName) => `${catName} - Ganz Deutschland`,
+    yourLocation: 'Ihr Standort',
+    sortedByDistance: 'Nach Entfernung sortiert',
+    showingIndoor: 'Innenorte werden angezeigt',
+    venueDetails: 'Ortsdetails',
+    visitWebsite: 'Website besuchen',
+    navigateTo: 'Navigation',
+    favorited: 'Favorisiert',
+    addFavorite: 'Zu Favoriten',
   }
 };
 
 const CATEGORIES = [
   { id: 'museum',     emoji: '🏛️', color: '#4ECDC4', bg: '#E8FAF8',
-    en: 'Museum',       zh: '博物馆',
+    en: 'Museum',       zh: '博物馆', de: 'Museum',
     tags: { tourism: ['museum', 'gallery'] } },
   { id: 'aquarium',   emoji: '🐠', color: '#0077B6', bg: '#E0F4FF',
-    en: 'Aquarium',     zh: '水族馆',
+    en: 'Aquarium',     zh: '水族馆', de: 'Aquarium',
     tags: { tourism: ['aquarium'] } },
   { id: 'zoo',        emoji: '🦁', color: '#82B74B', bg: '#EEF7E6',
-    en: 'Zoo',           zh: '动物园',
+    en: 'Zoo',           zh: '动物园', de: 'Zoo',
     tags: { tourism: ['zoo'] } },
   { id: 'children_farm', emoji: '🐑', color: '#A0C878', bg: '#F0F7E6',
-    en: "Children's Farm", zh: '儿童农场',
+    en: "Children's Farm", zh: '儿童农场', de: 'Kinderbauernhof',
     tags: { tourism: ['children_farm'] } },
   { id: 'theme_park', emoji: '🎡', color: '#E05A1E', bg: '#FFF0E9',
-    en: 'Theme Park',   zh: '主题公园',
+    en: 'Theme Park',   zh: '主题公园', de: 'Freizeitpark',
     tags: { tourism: ['theme_park'], leisure: ['water_park', 'amusement_arcade'] } },
   { id: 'indoor_playground', emoji: '🏠', color: '#FF6B35', bg: '#FFF0E9',
-    en: 'Indoor Playground', zh: '室内游乐场',
+    en: 'Indoor Playground', zh: '室内游乐场', de: 'Indoorspielplatz',
     tags: { leisure: ['indoor_playground'] } },
   { id: 'playground', emoji: '🛝', color: '#F7DC6F', bg: '#FEFCE8',
-    en: 'Playground',   zh: '游乐场',
+    en: 'Playground',   zh: '游乐场', de: 'Spielplatz',
     tags: { leisure: ['playground'] } },
   { id: 'beach',      emoji: '🏖️', color: '#0EA5A0', bg: '#E0F7F6',
-    en: 'Beach',        zh: '海滩',
+    en: 'Beach',        zh: '海滩', de: 'Strand',
     tags: { natural: ['beach'] } },
   { id: 'nature',     emoji: '🌳', color: '#27AE60', bg: '#E8F8EE',
-    en: 'Nature & Park', zh: '自然公园',
+    en: 'Nature & Park', zh: '自然公园', de: 'Natur & Park',
     tags: { leisure: ['nature_reserve', 'park', 'miniature_golf', 'marina'] } },
   { id: 'historic',   emoji: '🏰', color: '#8B6914', bg: '#F5EDD5',
-    en: 'Historic',     zh: '历史古迹',
+    en: 'Historic',     zh: '历史古迹', de: 'Historisch',
     tags: { historic: ['castle', 'monument', 'fort', 'ruins', 'windmill', 'ship'] } },
   { id: 'sports',     emoji: '⛸️', color: '#6C5CE7', bg: '#F0EEFF',
-    en: 'Sports',       zh: '运动场',
+    en: 'Sports',       zh: '运动场', de: 'Sport',
     tags: { leisure: ['ice_rink', 'swimming_pool', 'sports_centre'] } },
   { id: 'theatre',    emoji: '🎭', color: '#E84393', bg: '#FEE9F4',
-    en: 'Theatre & Cinema', zh: '剧院影院',
+    en: 'Theatre & Cinema', zh: '剧院影院', de: 'Theater & Kino',
     tags: { amenity: ['theatre', 'cinema', 'arts_centre'] } },
   { id: 'visitor',    emoji: '🔭', color: '#0369A1', bg: '#E0F2FE',
-    en: 'Visitor Centre', zh: '游客中心',
+    en: 'Visitor Centre', zh: '游客中心', de: 'Besucherzentrum',
     tags: { tourism: ['visitor_centre'] } },
   { id: 'attraction', emoji: '⭐', color: '#F39C12', bg: '#FEF5E7',
-    en: 'Attraction',   zh: '景点',
+    en: 'Attraction',   zh: '景点', de: 'Attraktion',
     tags: { tourism: ['attraction'] } },
   { id: 'chinese_restaurant', emoji: '🥡', color: '#E74C3C', bg: '#FADBD8',
-    en: 'Chinese Restaurant', zh: '中餐厅',
+    en: 'Chinese Restaurant', zh: '中餐厅', de: 'Chinesisches Restaurant',
     tags: { amenity: ['chinese_restaurant'] } },
   { id: 'buffet', emoji: '🍱', color: '#8E44AD', bg: '#F4ECF7',
-    en: 'Buffet / All-You-Can-Eat', zh: '自助餐',
+    en: 'Buffet / All-You-Can-Eat', zh: '自助餐', de: 'Buffet',
     tags: { amenity: ['buffet_restaurant'] } },
 ];
 
@@ -1539,7 +1630,7 @@ function buildFilterBar() {
       chip.style.borderColor = cat.color;
     }
     const countBadge = totalCount > 0 ? ` <span class="filter-chip-count">${count}</span>` : '';
-    chip.innerHTML = `${cat.emoji} ${LANG.current === 'zh' ? cat.zh : cat.en}${countBadge}`;
+    chip.innerHTML = `${cat.emoji} ${cat[LANG.current] || cat.en}${countBadge}`;
     chip.onclick = () => setFilter(cat.id);
     bar.appendChild(chip);
   });
@@ -1554,14 +1645,10 @@ function setFilter(catId) {
   if (state.allVenues.length === 0) {
     buildFilterBar();
     const cat = catId ? CATEGORIES.find(c => c.id === catId) : null;
-    const catName = cat ? (LANG.current === 'zh' ? cat.zh : cat.en) : '';
+    const catName = cat ? (cat[LANG.current] || cat.en) : '';
     if (catId && cat) {
-      document.getElementById('emptyTitle').textContent =
-        LANG.current === 'zh' ? `搜索地区，查看全部${catName}` : `Search a region to browse ${catName}`;
-      document.getElementById('emptyDesc').textContent =
-        LANG.current === 'zh'
-          ? '在上方搜索框输入城市或联邦州，立即筛选该种类'
-          : 'Type a city or Bundesland above - results will be filtered to this category.';
+      document.getElementById('emptyTitle').textContent = T[LANG.current].browseCategory(catName);
+      document.getElementById('emptyDesc').textContent = T[LANG.current].browseCategoryDesc;
     } else {
       updateEmptyStateText();
     }
@@ -1617,7 +1704,7 @@ searchInput.addEventListener('input', () => {
       lat: v.lat,
       lon: v.lon,
       emoji: getCategoryForVenue(v.tags).emoji,
-      catLabel: LANG.current === 'zh' ? getCategoryForVenue(v.tags).zh : getCategoryForVenue(v.tags).en,
+      catLabel: getCategoryForVenue(v.tags)[LANG.current] || getCategoryForVenue(v.tags).en,
       city: v.tags['addr:city'] || '',
       id: `${v.type}/${v.id}`,
     }));
@@ -1629,7 +1716,7 @@ searchInput.addEventListener('input', () => {
       lat: v.lat,
       lon: v.lon,
       emoji: v.category.emoji,
-      catLabel: LANG.current === 'zh' ? v.category.zh : v.category.en,
+      catLabel: v.category[LANG.current] || v.category.en,
       city: v.address ? v.address.split(',').pop().trim() : '',
       id: v.id,
     }));
@@ -1672,12 +1759,12 @@ function renderAutocomplete(regionMatches, q, venueMatches) {
   if ('near me'.includes(q) || '我附近'.includes(q) || 'nearme'.includes(q.replace(/\s/g,''))) {
     html += `<div class="autocomplete-item" onclick="activateNearMe()">
       <span class="venue-emoji">📍</span>
-      <span>Near Me ${LANG.current === 'zh' ? '我附近' : ''}</span>
-      <span class="region-type">${LANG.current === 'zh' ? '定位' : 'Location'}</span>
+      <span>${T[LANG.current].nearMe}</span>
+      <span class="region-type">${T[LANG.current].nearMeLocationType}</span>
     </div>`;
   }
   if (venueMatches.length > 0) {
-    html += `<div class="autocomplete-section-label">${LANG.current === 'zh' ? '场地' : 'Venues'}</div>`;
+    html += `<div class="autocomplete-section-label">${T[LANG.current].venuesSection}</div>`;
     html += venueMatches.map(v => {
       const safeName = escapeHtml(v.name);
       const highlighted = safeName.replace(
@@ -1692,7 +1779,7 @@ function renderAutocomplete(regionMatches, q, venueMatches) {
     }).join('');
   }
   if (regionMatches.length > 0) {
-    html += `<div class="autocomplete-section-label">${LANG.current === 'zh' ? '地区' : 'Regions'}</div>`;
+    html += `<div class="autocomplete-section-label">${T[LANG.current].regionsSection}</div>`;
     html += regionMatches.map(r => {
       const safeName = escapeHtml(r.name);
       const highlighted = safeName.replace(
@@ -1865,9 +1952,10 @@ function buildCategoryQuery(catId, bbox) {
 
 async function searchDE(catId) {
   const cat = catId ? CATEGORIES.find(c => c.id === catId) : null;
+  const catName2 = cat ? (cat[LANG.current] || cat.en) : '';
   const regionLabel = cat
-    ? (LANG.current === 'zh' ? `${cat.zh} - 德国全境` : `${cat.en} - All Germany`)
-    : (LANG.current === 'zh' ? '德国全境' : 'All Germany');
+    ? T[LANG.current].allCountryCat(catName2)
+    : T[LANG.current].allCountry;
 
   state.currentRegion = regionLabel;
   state.activeCategory = catId;
@@ -1993,12 +2081,9 @@ function renderList() {
     updateEmptyStateText();
     if (state.activeCategory) {
       const cat = CATEGORIES.find(c => c.id === state.activeCategory);
-      document.getElementById('emptyTitle').textContent =
-        LANG.current === 'zh' ? '请先搜索地区' : 'Search a region first';
-      document.getElementById('emptyDesc').textContent =
-        LANG.current === 'zh'
-          ? `在上方搜索框输入城市或联邦州，再按「${cat?.zh || ''}」筛选`
-          : `Type a city or Bundesland in the search bar above, then filter by "${cat?.en || ''}"`;
+      const catName = cat ? (cat[LANG.current] || cat.en) : '';
+      document.getElementById('emptyTitle').textContent = T[LANG.current].searchRegionFirst;
+      document.getElementById('emptyDesc').textContent = T[LANG.current].searchRegionFirstDesc(catName);
     }
     return;
   }
@@ -2006,11 +2091,9 @@ function renderList() {
     empty.style.display = 'flex';
     list.style.display = 'none';
     const cat = CATEGORIES.find(c => c.id === state.activeCategory);
-    const catName = cat ? (LANG.current === 'zh' ? cat.zh : cat.en) : '';
-    document.getElementById('emptyTitle').textContent =
-      LANG.current === 'zh' ? `${state.currentRegion} 暂无${catName}` : `No ${catName} in ${state.currentRegion}`;
-    document.getElementById('emptyDesc').textContent =
-      LANG.current === 'zh' ? '试试其他分类，或搜索其他地区。' : 'Try a different category or search another region.';
+    const catName = cat ? (cat[LANG.current] || cat.en) : '';
+    document.getElementById('emptyTitle').textContent = T[LANG.current].noInRegion(catName, state.currentRegion);
+    document.getElementById('emptyDesc').textContent = T[LANG.current].tryOtherCategory;
     return;
   }
   empty.style.display = 'none';
@@ -2036,7 +2119,7 @@ function renderList() {
           ${v.nameZh ? `<div class="venue-name-zh">${v.nameZh}</div>` : ''}
           <div class="venue-meta">
             <span class="venue-tag" style="background:${v.category.bg};color:${v.category.color}">
-              ${LANG.current === 'zh' ? v.category.zh : v.category.en}
+              ${v.category[LANG.current] || v.category.en}
             </span>
             ${distHtml}
             ${v.address ? `<span class="venue-address">
@@ -2190,10 +2273,8 @@ function setLang(lang) {
   }
   const wb = document.getElementById('weatherBanner');
   if (wb && wb.style.display !== 'none') {
-    document.getElementById('weatherBannerText').textContent =
-      lang === 'zh' ? '🌧️ 下雨天？试试室内活动！' : '🌧️ Rainy? Try indoor activities!';
-    document.getElementById('weatherBannerBtn').textContent =
-      lang === 'zh' ? '查看室内场地' : 'Show indoor venues';
+    document.getElementById('weatherBannerText').textContent = T[lang].weatherBannerText;
+    document.getElementById('weatherBannerBtn').textContent = T[lang].weatherBannerBtn;
   }
 }
 
@@ -2888,7 +2969,7 @@ const STATIC_DE_VENUES = [
 ];
 
 function loadStaticVenues() {
-  state.currentRegion = LANG.current === 'zh' ? '德国精选场地' : 'Featured Germany Venues';
+  state.currentRegion = T[LANG.current].featuredRegion;
   processOSMData(STATIC_DE_VENUES);
 }
 
@@ -3044,19 +3125,26 @@ function recommendVenues(parsed) {
 
 function buildChatResponse(parsed, venues) {
   const isZh = /[\u4e00-\u9fff]/.test(parsed.raw);
+  const isDe = /[äöüßÄÖÜ]|(?:^|\s)(ich|du|wir|ihr|sie|für|mit|bei|und|oder|Kinder|Jahre)(?:\s|$)/i.test(parsed.raw);
+  const chatLang = isZh ? 'zh' : (isDe ? 'de' : 'en');
   let parts = [];
 
   if (venues.length === 0) {
-    return isZh
-      ? '抱歉，没有找到完全匹配的场地。试试换个关键词或放宽距离范围？'
-      : "Sorry, no exact matches found. Try different keywords or a wider range?";
+    const noMatch = { en: "Sorry, no exact matches found. Try different keywords or a wider range?", zh: '抱歉，没有找到完全匹配的场地。试试换个关键词或放宽距离范围？', de: 'Leider keine Treffer. Versuchen Sie andere Suchbegriffe oder einen größeren Umkreis.' };
+    return noMatch[chatLang];
   }
 
-  if (isZh) {
+  if (chatLang === 'zh') {
     let opener = '为你推荐以下场地';
     if (parsed.city) opener = `在 ${parsed.city} 附近为你推荐`;
     if (parsed.age) opener += `（适合${parsed.age}岁孩子）`;
     opener += '：';
+    parts.push(opener);
+  } else if (chatLang === 'de') {
+    let opener = 'Hier sind meine Empfehlungen';
+    if (parsed.city) opener = `In der Nähe von ${parsed.city}, hier meine Tipps`;
+    if (parsed.age) opener += ` (für ${parsed.age}-Jährige)`;
+    opener += ':';
     parts.push(opener);
   } else {
     let opener = 'Here are my recommendations';
@@ -3068,14 +3156,18 @@ function buildChatResponse(parsed, venues) {
 
   venues.forEach((v, i) => {
     const dist = v._dist ? ` (${v._dist.toFixed(1)}km)` : '';
-    const catLabel = isZh ? v._cat.zh : v._cat.en;
+    const catLabel = v._cat[chatLang] || v._cat.en;
     parts.push(`\n${v._cat.emoji} <strong>${v._name}</strong>${dist}\n<span style="color:var(--text-muted);font-size:11px">${catLabel} &middot; ${v._city}</span>`);
   });
 
-  if (isZh) {
+  if (chatLang === 'zh') {
     if (parsed.age && parsed.age <= 3) parts.push('\n\u{1F4A1} 小贴士：低龄宝宝推荐儿童农场和室内游乐场，安全又有趣！');
     if (parsed.categories.has('indoor_playground')) parts.push('\n\u{1F4A1} JUMP House 和 Sensapolis 是德国雨天遛娃的好去处！');
     parts.push('\n点击场地名称可在地图上查看位置。');
+  } else if (chatLang === 'de') {
+    if (parsed.age && parsed.age <= 3) parts.push('\n\u{1F4A1} Tipp: Kinderbauernhöfe und Indoorspielplätze sind toll für Kleinkinder!');
+    if (parsed.categories.has('indoor_playground')) parts.push('\n\u{1F4A1} JUMP House und Sensapolis sind perfekt für Regentage!');
+    parts.push('\nKlicken Sie auf einen Ort, um ihn auf der Karte zu sehen.');
   } else {
     if (parsed.age && parsed.age <= 3) parts.push("\n\u{1F4A1} Tip: Children's farms and indoor playgrounds are great for toddlers!");
     parts.push('\nClick a venue name to see it on the map.');
@@ -3098,29 +3190,38 @@ function toggleChat(open) {
 }
 
 function initChat() {
-  const isZh = LANG.current === 'zh';
-  addBotMessage(isZh
-    ? '👋 你好！我是德国亲子出行助手。\n\n告诉我你的情况，比如：\n\u2022 你在哪个城市？\n\u2022 孩子多大？\n\u2022 想要室内还是室外？\n\u2022 对什么感兴趣？\n\n我会根据你的需求推荐最合适的去处！'
-    : "👋 Hi! I'm your Germany family outing assistant.\n\nTell me about your situation:\n\u2022 Which city are you in?\n\u2022 How old are your kids?\n\u2022 Indoor or outdoor?\n\u2022 Any interests?\n\nI'll recommend the best places for your family!"
-  );
-  showQuickActions(isZh);
+  const chatGreetings = {
+    en: "Hi! I'm your Germany family outing assistant.\n\nTell me about your situation:\n\u2022 Which city are you in?\n\u2022 How old are your kids?\n\u2022 Indoor or outdoor?\n\u2022 Any interests?\n\nI'll recommend the best places for your family!",
+    zh: '你好！我是德国亲子出行助手。\n\n告诉我你的情况，比如：\n\u2022 你在哪个城市？\n\u2022 孩子多大？\n\u2022 想要室内还是室外？\n\u2022 对什么感兴趣？\n\n我会根据你的需求推荐最合适的去处！',
+    de: 'Hallo! Ich bin Ihr Familienausflug-Assistent für Deutschland.\n\nErzählen Sie mir:\n\u2022 In welcher Stadt sind Sie?\n\u2022 Wie alt sind Ihre Kinder?\n\u2022 Drinnen oder draußen?\n\u2022 Besondere Interessen?\n\nIch empfehle die besten Orte für Ihre Familie!',
+  };
+  addBotMessage(chatGreetings[LANG.current] || chatGreetings.en);
+  showQuickActions();
 }
 
-function showQuickActions(isZh) {
+function showQuickActions() {
   const el = document.getElementById('chatQuickActions');
-  const actions = isZh
-    ? [
-        ['🏠 Berlin室内玩', '我在Berlin，下雨天想找室内游乐场'],
-        ['🦁 带3岁宝宝看动物', '我孩子3岁，想去看动物，在Munich附近'],
-        ['🏖️ 周末海滩推荐', '周末想带孩子去海滩，从Hamburg出发'],
-        ['🏛️ 博物馆推荐', '想带8岁孩子去博物馆，在Berlin'],
-      ]
-    : [
-        ['🏠 Indoor Berlin', 'Indoor activities in Berlin for rainy day'],
-        ['🦁 Zoo near Munich', 'Zoo or farm near Munich for 3 year old'],
-        ['🏖️ Beach trip', 'Beach near Hamburg for kids'],
-        ['🏛️ Museum Berlin', 'Museum for 8 year old near Berlin'],
-      ];
+  const allActions = {
+    en: [
+      ['🏠 Indoor Berlin', 'Indoor activities in Berlin for rainy day'],
+      ['🦁 Zoo near Munich', 'Zoo or farm near Munich for 3 year old'],
+      ['🏖️ Beach trip', 'Beach near Hamburg for kids'],
+      ['🏛️ Museum Berlin', 'Museum for 8 year old near Berlin'],
+    ],
+    zh: [
+      ['🏠 Berlin室内玩', '我在Berlin，下雨天想找室内游乐场'],
+      ['🦁 带3岁宝宝看动物', '我孩子3岁，想去看动物，在Munich附近'],
+      ['🏖️ 周末海滩推荐', '周末想带孩子去海滩，从Hamburg出发'],
+      ['🏛️ 博物馆推荐', '想带8岁孩子去博物馆，在Berlin'],
+    ],
+    de: [
+      ['🏠 Indoor Berlin', 'Indooraktivitäten in Berlin für Regentag'],
+      ['🦁 Zoo bei München', 'Zoo oder Bauernhof bei München für 3-Jährige'],
+      ['🏖️ Strand Hamburg', 'Strand bei Hamburg für Kinder'],
+      ['🏛️ Museum Berlin', 'Museum für 8-Jährige in Berlin'],
+    ],
+  };
+  const actions = allActions[LANG.current] || allActions.en;
   el.innerHTML = actions.map(([label, msg]) =>
     `<button class="chat-quick-btn" onclick="sendQuickMsg('${msg.replace(/'/g,"\\'")}')">${label}</button>`
   ).join('');
@@ -3281,12 +3382,12 @@ function activateNearMe() {
       state.userLocationMarker = L.circleMarker([lat, lon], {
         radius: 10, color: '#4285F4', fillColor: '#4285F4',
         fillOpacity: 0.5, weight: 3, opacity: 0.8,
-      }).addTo(map).bindPopup(LANG.current === 'zh' ? '📍 你的位置' : '📍 Your location');
+      }).addTo(map).bindPopup(T[LANG.current].yourLocation);
       state.displayed = 0;
       applyFilter();
       buildFilterBar();
       map.flyTo([lat, lon], 11, { duration: 1 });
-      showToast(LANG.current === 'zh' ? '已按距离排序' : 'Sorted by distance', 2000);
+      showToast(T[LANG.current].sortedByDistance, 2000);
     },
     (err) => {
       btn.classList.remove('active');
@@ -3374,8 +3475,8 @@ function openDetailPanel(venueId) {
   const panel = document.getElementById('venueDetailPanel');
   const body = document.getElementById('detailPanelBody');
   const titleEl = document.getElementById('detailPanelTitle');
-  const isZh = LANG.current === 'zh';
-  titleEl.textContent = isZh ? '场地详情' : 'Venue Details';
+  const t = T[LANG.current];
+  titleEl.textContent = t.venueDetails;
   const isFav = state.favorites.includes(v.id);
 
   let html = '';
@@ -3383,7 +3484,7 @@ function openDetailPanel(venueId) {
   html += `<div class="detail-venue-name">${escapeHtml(v.name)}</div>`;
   if (v.nameZh) html += `<div class="detail-venue-name-zh">${escapeHtml(v.nameZh)}</div>`;
   html += `<span class="detail-category-badge" style="background:${v.category.bg};color:${v.category.color}">
-    ${v.category.emoji} ${isZh ? v.category.zh : v.category.en}
+    ${v.category.emoji} ${v.category[LANG.current] || v.category.en}
   </span>`;
 
   if (v.address) {
@@ -3399,14 +3500,14 @@ function openDetailPanel(venueId) {
   html += '<div class="detail-actions">';
   if (v.website) {
     html += `<a class="detail-btn detail-btn-website" href="${v.website}" target="_blank" rel="noopener">
-      🔗 ${isZh ? '访问官方网站' : 'Visit Website'}
+      🔗 ${t.visitWebsite}
     </a>`;
   }
   html += `<a class="detail-btn detail-btn-navigate" href="https://www.google.com/maps/dir/?api=1&destination=${v.lat},${v.lon}" target="_blank" rel="noopener">
-    🧭 ${isZh ? '导航前往' : 'Navigate'}
+    🧭 ${t.navigateTo}
   </a>`;
   html += `<button class="detail-btn detail-btn-favorite ${isFav ? 'favorited' : ''}" id="detailFavBtn" onclick="toggleDetailFavorite('${v.id.replace(/'/g,"\\'")}')">
-    ${isFav ? '❤️' : '♡'} ${isFav ? (isZh ? '已收藏' : 'Favorited') : (isZh ? '收藏' : 'Add to Favorites')}
+    ${isFav ? '❤️' : '♡'} ${isFav ? t.favorited : t.addFavorite}
   </button>`;
   html += '</div>';
 
@@ -3421,11 +3522,11 @@ function closeDetailPanel() {
 function toggleDetailFavorite(venueId) {
   toggleFavorite(venueId, null);
   const btn = document.getElementById('detailFavBtn');
-  const isZh = LANG.current === 'zh';
+  const t = T[LANG.current];
   const isFav = state.favorites.includes(venueId);
   if (btn) {
     btn.className = 'detail-btn detail-btn-favorite' + (isFav ? ' favorited' : '');
-    btn.innerHTML = `${isFav ? '❤️' : '♡'} ${isFav ? (isZh ? '已收藏' : 'Favorited') : (isZh ? '收藏' : 'Add to Favorites')}`;
+    btn.innerHTML = `${isFav ? '❤️' : '♡'} ${isFav ? t.favorited : t.addFavorite}`;
   }
   renderList();
 }
@@ -3444,10 +3545,10 @@ document.addEventListener('keydown', (e) => {
 
 // -- AGE SUITABILITY FILTER --
 const AGE_FILTER_RANGES = [
-  { id: 'all', en: 'All ages', zh: '所有年龄', emoji: '', categories: null },
-  { id: '0-3', en: '0-3', zh: '0-3', emoji: '👶', categories: ['children_farm','playground','indoor_playground','beach','chinese_restaurant','buffet'] },
-  { id: '3-6', en: '3-6', zh: '3-6', emoji: '🧒', categories: ['children_farm','playground','indoor_playground','beach','chinese_restaurant','buffet','zoo','aquarium','theme_park','nature','museum'] },
-  { id: '6-12', en: '6-12', zh: '6-12', emoji: '🧒', categories: null },
+  { id: 'all', en: 'All ages', zh: '所有年龄', de: 'Alle Altersgruppen', emoji: '', categories: null },
+  { id: '0-3', en: '0-3', zh: '0-3', de: '0-3 Jahre', emoji: '👶', categories: ['children_farm','playground','indoor_playground','beach','chinese_restaurant','buffet'] },
+  { id: '3-6', en: '3-6', zh: '3-6', de: '3-6 Jahre', emoji: '🧒', categories: ['children_farm','playground','indoor_playground','beach','chinese_restaurant','buffet','zoo','aquarium','theme_park','nature','museum'] },
+  { id: '6-12', en: '6-12', zh: '6-12', de: '6-12 Jahre', emoji: '🧒', categories: null },
 ];
 
 let activeAgeFilter = 'all';
@@ -3476,7 +3577,7 @@ function buildAgeFilterPills() {
   AGE_FILTER_RANGES.forEach(age => {
     const pill = document.createElement('button');
     pill.className = 'age-pill' + (activeAgeFilter === age.id ? ' active' : '');
-    const label = LANG.current === 'zh' ? age.zh : age.en;
+    const label = age[LANG.current] || age.en;
     pill.innerHTML = age.emoji ? `${age.emoji} ${label}` : label;
     pill.onclick = () => setAgeFilter(age.id);
     group.appendChild(pill);
@@ -3512,11 +3613,8 @@ async function fetchWeather() {
     const isRaining = rain > 0 || code >= 61;
     if (isRaining && !weatherBannerDismissed) {
       const banner = document.getElementById('weatherBanner');
-      const isZh = LANG.current === 'zh';
-      document.getElementById('weatherBannerText').textContent =
-        isZh ? '🌧️ 下雨天？试试室内活动！' : '🌧️ Rainy? Try indoor activities!';
-      document.getElementById('weatherBannerBtn').textContent =
-        isZh ? '查看室内场地' : 'Show indoor venues';
+      document.getElementById('weatherBannerText').textContent = T[LANG.current].weatherBannerText;
+      document.getElementById('weatherBannerBtn').textContent = T[LANG.current].weatherBannerBtn;
       banner.style.display = 'flex';
     }
   } catch (e) {
@@ -3541,7 +3639,7 @@ function filterIndoorWeather() {
   renderMarkers();
   buildFilterBar();
   buildAgeFilterPills();
-  showToast(LANG.current === 'zh' ? '已筛选室内活动场地' : 'Showing indoor venues', 2000);
+  showToast(T[LANG.current].showingIndoor, 2000);
   dismissWeatherBanner();
 }
 
